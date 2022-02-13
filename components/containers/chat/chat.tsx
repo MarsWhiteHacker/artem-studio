@@ -24,6 +24,7 @@ export const Chat: VFC = () => {
         />
         <Contact title="email" link="someone@example.com" size="small" />
         <Contact title="phone" link="+380999999999" size="small" />
+        <Contact title="youtube" link="https://www.youtube.com" size="small" />
       </div>
       <div className={s.heartsWrapper}>
         <img alt="chat" src="/hearts.png" className={s.img} />

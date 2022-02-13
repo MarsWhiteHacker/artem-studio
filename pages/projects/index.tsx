@@ -1,36 +1,33 @@
 import type { NextPage } from "next";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { initializeFirebase } from "store/firebase";
+import { Carousel } from "react-bootstrap";
+import {
+  collection,
+  DocumentData,
+  getDocs,
+  getFirestore,
+} from "firebase/firestore";
 
 import { NavigationBar } from "components/containers/navigation";
 import { urlToIndexConverter } from "utils/urlToIndexConverter";
 import { Title } from "components/containers/title";
 import s from "styles/projects.module.css";
-import { Carousel } from "react-bootstrap";
 import { fromArrayToNestedArrays } from "utils/fromArrayToNestedArrays";
-import { useRouter } from "next/router";
 import { Card } from "components/card";
-import { useState } from "react";
 
-const Projects: NextPage<Props> = ({ activeFromServer }) => {
+const Projects: NextPage<Props> = ({ activeFromServer, images }) => {
   const router = useRouter();
-  const [index, setIndex] = useState(0);
   const projectsPerSlide = 6;
-  const data = [
-    { src: "241732508_428926741983656_8749465304171645258_n.jpg", id: 1 },
-    { src: "241744251_1959460034220194_5359426941602671539_n.jpg", id: 2 },
-    { src: "242140249_381361070064227_9013256209511860520_n.jpg", id: 3 },
-    { src: "241732508_428926741983656_8749465304171645258_n.jpg", id: 4 },
-    { src: "241744251_1959460034220194_5359426941602671539_n.jpg", id: 5 },
-    { src: "242140249_381361070064227_9013256209511860520_n.jpg", id: 6 },
-    { src: "241732508_428926741983656_8749465304171645258_n.jpg", id: 7 },
-    { src: "241744251_1959460034220194_5359426941602671539_n.jpg", id: 8 },
-    { src: "242140249_381361070064227_9013256209511860520_n.jpg", id: 9 },
-    { src: "241732508_428926741983656_8749465304171645258_n.jpg", id: 10 },
-    { src: "241744251_1959460034220194_5359426941602671539_n.jpg", id: 11 },
-    { src: "242140249_381361070064227_9013256209511860520_n.jpg", id: 12 },
-    { src: "241732508_428926741983656_8749465304171645258_n.jpg", id: 13 },
-  ];
+
+  const [index, setIndex] = useState(0);
+
   const dividedPerSlideDataArray = fromArrayToNestedArrays(
-    data,
+    images as Array<{
+      image: string;
+      name: string;
+    }>,
     projectsPerSlide
   );
 
@@ -92,9 +89,20 @@ export default Projects;
 Projects.getInitialProps = async ({ pathname }) => {
   const activeFromServer = urlToIndexConverter(pathname);
 
-  return { activeFromServer: activeFromServer };
+  const firebaseApp = initializeFirebase();
+  const imagesSnapshot = await getDocs(
+    collection(getFirestore(firebaseApp), "projects")
+  );
+  const images: DocumentData = [];
+  imagesSnapshot.forEach((doc) => {
+    const data = doc.data();
+    images.push({ image: data.photos[0], name: data.name });
+  });
+
+  return { activeFromServer: activeFromServer, images };
 };
 
 type Props = {
   activeFromServer: number;
+  images: DocumentData;
 };

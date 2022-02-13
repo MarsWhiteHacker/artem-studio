@@ -1,5 +1,5 @@
 import Router from "next/router";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { navigationActions } from "store/navigation/actions";
@@ -17,6 +17,7 @@ export const NavigationBar = ({
 }: React.PropsWithChildren<Props>) => {
   const languages = useContext(LanguagesContext);
   const dispatch = useDispatch();
+
   const active = useSelector(navigationSelectors.active);
   const language = useSelector(languagesSelectors.language);
   const barData = buttonsData(

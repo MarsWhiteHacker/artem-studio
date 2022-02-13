@@ -9,14 +9,18 @@ export const Card: VFC<Props> = ({ data, link }) => {
   const dispatch = useDispatch();
 
   const onCLickHandler = () => {
-    Router.push(`${link}/${data.id}`);
+    Router.push(`${link}/${data.name}`);
     dispatch(navigationActions.changeActiveRequested(null));
   };
 
   return (
     <div className={s.imageWrapper} onClick={onCLickHandler}>
-      <img alt="project" src={`/${data.src}`} className={s.project} />
-      <div className={s.name}>{data.id}</div>
+      <img
+        alt="project"
+        src={`${process.env.STORAGE_URL}${data.image}`}
+        className={s.project}
+      />
+      <div className={s.name}>{data.name}</div>
       <div className={s.shadow}></div>
     </div>
   );
@@ -24,8 +28,8 @@ export const Card: VFC<Props> = ({ data, link }) => {
 
 type Props = {
   data: {
-    id: number;
-    src: string;
+    name: number;
+    image: string;
   };
   link: string;
 };

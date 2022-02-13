@@ -25,6 +25,9 @@ export interface LanguageInterface {
   project: {
     back: string;
   };
+  error: {
+    notFound: string;
+  };
 }
 
 export type LangButtons = "EN" | "RU";

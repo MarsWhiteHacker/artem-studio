@@ -9,6 +9,7 @@ import { Carousel } from "components/carousel";
 import store from "store";
 import { LanguageProvider } from "components/containers/languageProvider";
 import "../styles/globals.css";
+import { Alert } from "components/containers/alert";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -18,10 +19,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Provider store={store}>
         <LanguageProvider>
+          <Alert>
           <Carousel>
             <Chat />
             <Component {...pageProps} />
           </Carousel>
+          </Alert>
         </LanguageProvider>
       </Provider>
     </>

@@ -25,6 +25,9 @@ export const englishLanguage: LanguageInterface = {
   },
   title: "ARTEM PECHENIUK STUDIO",
   project: {
-    back: "BACK",
+    back: "Projects",
+  },
+  error: {
+    notFound: "Not Found | 404",
   },
 };

@@ -25,6 +25,9 @@ export const russianLanguage: LanguageInterface = {
   },
   title: "СТУДИЯ АРТЕМА ПЕЧЕНЮКА",
   project: {
-    back: "НАЗАД",
+    back: "Проекты",
+  },
+  error: {
+    notFound: "Не знайдено | 404",
   },
 };

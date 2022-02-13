@@ -42,18 +42,20 @@ a:hover {
 
 ::-webkit-scrollbar {
   width: 6px;
+  height: 5px;
   background-color: rgba(0, 0, 0, 1);
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #444;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track-piece:end {
   background: transparent;
+  margin-bottom: 5px;
 }
 
 ::-webkit-scrollbar-track-piece:start {
   background: transparent;
-  margin-top: 40px;
 }

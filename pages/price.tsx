@@ -1,5 +1,12 @@
 import { ChangeEvent, useContext, useState } from "react";
 import type { NextPage } from "next";
+import {
+  doc,
+  DocumentData,
+  DocumentSnapshot,
+  getDoc,
+  getFirestore,
+} from "firebase/firestore";
 
 import { Board } from "components/containers/board";
 import { NavigationBar } from "components/containers/navigation";
@@ -8,13 +15,14 @@ import { Title } from "components/containers/title";
 import s from "styles/price.module.css";
 import { Header } from "components/common/header";
 import { LanguagesContext } from "contexts";
+import { firebase, initializeFirebase } from "store/firebase";
 
-const Price: NextPage<Props> = ({ activeFromServer }) => {
+const Price: NextPage<Props> = ({ activeFromServer, priceData }) => {
   const languages = useContext(LanguagesContext);
   const [footSquareValue, setFootSquareValue] = useState<number | null>(null);
   const [meterSquareValue, setMeterSquareValue] = useState<number | null>(null);
-  const footPrice = 10;
-  const meterPrice = 107.5;
+  const footPrice = priceData.foot;
+  const meterPrice = priceData.meter;
   const sum = footSquareValue ? footSquareValue * footPrice : 0;
 
   const footInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -88,9 +96,17 @@ export default Price;
 Price.getInitialProps = async ({ pathname }) => {
   const activeFromServer = urlToIndexConverter(pathname);
 
-  return { activeFromServer: activeFromServer };
+  const firebaseApp = initializeFirebase();
+  const priceRef = doc(getFirestore(firebaseApp), "price", "price");
+  const priceSnap = await getDoc(priceRef);
+
+  return {
+    activeFromServer: activeFromServer,
+    priceData: priceSnap.data() ?? { foot: 0, meter: 0 },
+  };
 };
 
 type Props = {
   activeFromServer: number;
+  priceData: DocumentData;
 };

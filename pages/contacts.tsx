@@ -19,6 +19,7 @@ const Contacts: NextPage<Props> = ({ activeFromServer }) => {
               <Contact title="instagram" link="https://www.instagram.com" />
               <Contact title="email" link="someone@example.com" />
               <Contact title="phone" link="+380999999999" />
+              <Contact title="youtube" link="https://www.youtube.com" />
             </div>
           </div>
         </Board>
