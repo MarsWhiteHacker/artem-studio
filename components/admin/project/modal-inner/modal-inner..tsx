@@ -15,6 +15,7 @@ export const ModalInner: VFC<Props> = ({
   const handlePhoto = (event: ChangeEvent<HTMLInputElement>) => {
     if (event?.currentTarget?.files && event?.currentTarget?.files.length > 0) {
       if (photos) {
+        // @ts-ignore
         setPhotos([...photos, ...event?.currentTarget?.files]);
       } else {
         setPhotos(event?.currentTarget?.files);
@@ -38,6 +39,7 @@ export const ModalInner: VFC<Props> = ({
     if (photos) {
       const newFiles = [...photos];
       newFiles.splice(index, 1);
+      // @ts-ignore
       setPhotos(newFiles);
     }
   };

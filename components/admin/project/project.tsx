@@ -11,7 +11,7 @@ import { Button } from "react-bootstrap";
 import { deleteObject, ref, uploadBytes } from "firebase/storage";
 import { ModalFC } from "components/common/modal";
 import { ModalInner } from "./modal-inner/modal-inner.";
-import { dispatchWithTimer } from "utils/dispatchWithTImer";
+import { dispatchWithTimer } from "../../../utils/dispatchWithTimer";
 import { useDispatch } from "react-redux";
 
 export const Project: VFC<Props> = ({ projectName, switchHomePage }) => {

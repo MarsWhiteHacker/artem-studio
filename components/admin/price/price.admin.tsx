@@ -10,7 +10,7 @@ import loadingIcon from "../../../public/loading.gif";
 import { Button } from "react-bootstrap";
 import { ModalFC } from "components/common/modal";
 import { ModalInner } from "./modal-inner";
-import { dispatchWithTimer } from "utils/dispatchWithTImer";
+import { dispatchWithTimer } from "../../../utils/dispatchWithTimer";
 
 export const Price: VFC = () => {
   const dispatch = useDispatch();

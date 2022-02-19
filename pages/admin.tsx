@@ -21,7 +21,7 @@ import { ModalInner } from "components/admin/project/modal-inner/modal-inner.";
 import { doc, setDoc } from "firebase/firestore";
 import { firebase } from "store/firebase";
 import { ref, uploadBytes } from "firebase/storage";
-import { dispatchWithTimer } from "utils/dispatchWithTImer";
+import { dispatchWithTimer } from "../utils/dispatchWithTimer";
 
 const Admin: NextPage = () => {
   const [isAppInitialized, setIsAppInitialized] = useState(false);

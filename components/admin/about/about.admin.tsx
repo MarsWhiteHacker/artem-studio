@@ -8,11 +8,11 @@ import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 
 import { alertActions } from "store/alert/actions";
+import { dispatchWithTimer } from "../../../utils/dispatchWithTimer";
 import s from "./about.module.css";
 import loadingIcon from "../../../public/loading.gif";
 import { ModalFC } from "components/common/modal";
 import { ModalInner } from "./modal-inner";
-import { dispatchWithTimer } from "utils/dispatchWithTImer";
 
 export const About: VFC = () => {
   const PHOTO_URI = `about/${uuidv4()}.jpg`;
