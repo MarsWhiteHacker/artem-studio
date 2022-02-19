@@ -52,3 +52,47 @@
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
+@media (max-width: 1200px) {
+  .input {
+    width: 250px;
+  }
+  .formWrapper {
+    font-size: 21px;
+  }
+  .price,
+  .subheader {
+    font-size: 21px;
+  }
+  .sumWrapper {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 768px) {
+  .input {
+    width: 200px;
+  }
+  .formWrapper {
+    font-size: 18px;
+  }
+  .price,
+  .subheader {
+    font-size: 18px;
+  }
+  .sumWrapper {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .formWrapper {
+    flex-direction: column;
+  }
+  .meterinner {
+    margin-top: 20px;
+  }
+  .footinner {
+    margin-top: 20px;
+  }
+}

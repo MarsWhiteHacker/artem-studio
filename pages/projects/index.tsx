@@ -19,7 +19,12 @@ import { Card } from "components/card";
 
 const Projects: NextPage<Props> = ({ activeFromServer, images }) => {
   const router = useRouter();
-  const projectsPerSlide = 6;
+
+  const { innerWidth: width } = window && window;
+
+  const [projectsPerSlide, setProjectsPerSlide] = useState(
+    width > 993 ? 6 : width > 576 ? 4 : 2
+  );
 
   const [index, setIndex] = useState(0);
 

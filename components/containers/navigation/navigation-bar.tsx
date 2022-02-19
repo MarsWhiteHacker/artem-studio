@@ -10,6 +10,7 @@ import { LangButtons } from "types/language.types";
 import { LanguagesContext } from "contexts";
 import s from "./navigation.module.css";
 import { buttonsData } from "./utils/buttons-data";
+import { MobileNavigation } from "./mobile-navigation";
 
 export const NavigationBar = ({
   children,
@@ -73,6 +74,13 @@ export const NavigationBar = ({
           </span>
         </div>
       </div>
+      <MobileNavigation
+        barData={barData}
+        onClickHandler={onClickHandler}
+        activeFromServer={activeFromServer}
+        active={active}
+        onLanguageHandler={onLanguageHandler}
+      />
       {children}
     </>
   );

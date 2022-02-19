@@ -42,3 +42,47 @@
   border-radius: 7px;
   overflow: hidden;
 }
+
+@media (max-width: 1200px) {
+  .textWrapper {
+    padding-left: 45px;
+    padding-right: 0px;
+  }
+  .imgWraper {
+    height: 60%;
+  }
+}
+
+@media (max-width: 992px) {
+  .chatWrapper {
+  }
+}
+
+@media (max-width: 768px) {
+  .textWrapper {
+    padding-left: 30px;
+    flex: 2;
+  }
+  .photoWrapper {
+    padding: 20px;
+    flex: 3;
+    padding-left: 0px;
+  }
+  .boardWrapper {
+    font-size: 15px;
+    flex-direction: column-reverse;
+  }
+  .imgWraper {
+    height: 45%;
+  }
+}
+
+@media (max-width: 576px) {
+  .photoWrapper {
+    padding: 0px;
+    padding-top: 20px;
+  }
+  .textWrapper {
+    padding: 20px;
+  }
+}

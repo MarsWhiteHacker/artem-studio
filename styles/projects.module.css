@@ -66,3 +66,28 @@
   justify-content: center;
   background-color: transparent;
 }
+
+@media (max-width: 992px) {
+  .slide {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .background {
+    padding-top: 0px;
+    height: calc(100vh - 56px);
+  }
+  .slide {
+    grid-template-columns: 1fr;
+    height: calc(100vh - 56px);
+  }
+  .nextButton {
+    height: calc(100vh - 56px);
+    top: 0px;
+  }
+  .prevButton {
+    height: calc(100vh - 56px);
+    top: 0px;
+  }
+}

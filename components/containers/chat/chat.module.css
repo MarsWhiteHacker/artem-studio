@@ -59,3 +59,23 @@
   transform: scale(1);
   height: 430px;
 }
+
+@media (max-width: 768px) {
+  .chatWrapper {
+    height: 80px;
+    width: 80px;
+  }
+  .netsWrapper {
+    width: 80px;
+  }
+  .chatWrapper:hover .netsWrapper {
+    transform: scale(1);
+    height: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .chatWrapper {
+    right: 20px;
+  }
+}

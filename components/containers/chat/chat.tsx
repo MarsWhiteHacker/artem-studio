@@ -14,12 +14,12 @@ export const Chat: VFC = () => {
         />
         <Contact
           title="telegram"
-          link="https://www.telegram.com"
+          link="https://t.me/Artem_Pecheniuk"
           size="small"
         />
         <Contact
           title="instagram"
-          link="https://www.instagram.com"
+          link="https://www.instagram.com/artem_pecheniuk_studio"
           size="small"
         />
         <Contact title="email" link="someone@example.com" size="small" />

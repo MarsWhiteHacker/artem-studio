@@ -48,3 +48,22 @@
   border-radius: 5px;
   overflow: hidden;
 }
+
+@media (max-width: 992px) {
+  .scroll {
+    height: 80vh;
+  }
+  .back {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .scrollWrapper {
+    height: calc(100vh - 56px);
+  }
+  .back {
+    font-size: 20px;
+    top: 20px;
+  }
+}

@@ -3,6 +3,7 @@ import Head from "next/head";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Provider } from "react-redux";
+import NextNProgress from "nextjs-progressbar";
 
 import { Chat } from "components/containers/chat";
 import { Carousel } from "components/carousel";
@@ -14,16 +15,26 @@ import { Alert } from "components/containers/alert";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      <NextNProgress
+        color="#dc3545"
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={3}
+        showOnShallow={true}
+        options={{
+          showSpinner: false,
+        }}
+      />
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Provider store={store}>
         <LanguageProvider>
           <Alert>
-          <Carousel>
-            <Chat />
-            <Component {...pageProps} />
-          </Carousel>
+            <Carousel>
+              <Chat />
+              <Component {...pageProps} />
+            </Carousel>
           </Alert>
         </LanguageProvider>
       </Provider>

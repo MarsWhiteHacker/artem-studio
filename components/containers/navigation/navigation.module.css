@@ -36,3 +36,18 @@
 .nonActive:hover {
   color: #dc3545;
 }
+
+@media (max-width: 768px) {
+  .active{
+    font-size: 13px;
+  }
+  .nonActive{
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    display: none;  
+  }
+}

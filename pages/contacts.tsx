@@ -15,8 +15,8 @@ const Contacts: NextPage<Props> = ({ activeFromServer }) => {
           <div className={s.wrapper}>
             <div className={s.nets}>
               <Contact title="whatsapp" link="https://www.whatsapp.com" />
-              <Contact title="telegram" link="https://www.telegram.com" />
-              <Contact title="instagram" link="https://www.instagram.com" />
+              <Contact title="telegram" link="https://t.me/Artem_Pecheniuk" />
+              <Contact title="instagram" link="https://www.instagram.com/artem_pecheniuk_studio" />
               <Contact title="email" link="someone@example.com" />
               <Contact title="phone" link="+380999999999" />
               <Contact title="youtube" link="https://www.youtube.com" />

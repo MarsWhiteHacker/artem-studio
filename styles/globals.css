@@ -59,3 +59,11 @@ a:hover {
 ::-webkit-scrollbar-track-piece:start {
   background: transparent;
 }
+
+@media (max-width: 768px) {
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
