@@ -17,7 +17,10 @@
 
 @media (max-width: 576px) {
   .board {
-    top: 55%;
-    height: 86vh;
+    top: 0%;
+    height: auto;
+    margin-top: 100px;
+    min-height: 70vh;
+    transform: translateY(0px) translateX(-50%);
   }
 }

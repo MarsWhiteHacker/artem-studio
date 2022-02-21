@@ -66,4 +66,7 @@
     font-size: 20px;
     top: 20px;
   }
+  .scroll {
+    height: calc(100vh - 120px);
+  }
 }

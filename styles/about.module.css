@@ -79,10 +79,18 @@
 
 @media (max-width: 576px) {
   .photoWrapper {
+    height: 200px;
     padding: 0px;
     padding-top: 20px;
   }
   .textWrapper {
-    padding: 20px;
+    height: 200px;
+    padding: 30px;
+  }
+  .imgWraper {
+    height: 100%;
+  }
+  .image {
+    height: 100%;
   }
 }
