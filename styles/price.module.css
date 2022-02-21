@@ -95,4 +95,10 @@
   .footinner {
     margin-top: 20px;
   }
+  .infoWrapper{
+    margin-top: 30px;
+  }
+  .boardWrapper {
+    height: auto;
+  }
 }

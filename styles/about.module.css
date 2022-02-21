@@ -79,7 +79,7 @@
 
 @media (max-width: 576px) {
   .photoWrapper {
-    height: 200px;
+    height: 400px;
     padding: 0px;
     padding-top: 20px;
   }
