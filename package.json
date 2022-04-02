@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next dev && react-dotenv && react-scripts start",
     "build": "next build && react-dotenv && react-scripts start",
+    "buildProd": "next build",
     "start": "next start && react-dotenv && react-scripts start",
     "serve": "react-dotenv && serve build",
     "lint": "next lint"
