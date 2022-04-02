@@ -14,12 +14,42 @@ const Contacts: NextPage<Props> = ({ activeFromServer }) => {
         <Board>
           <div className={s.wrapper}>
             <div className={s.nets}>
-              <Contact title="whatsapp" link="https://www.whatsapp.com" />
-              <Contact title="telegram" link="https://t.me/Artem_Pecheniuk" />
-              <Contact title="instagram" link="https://www.instagram.com/artem_pecheniuk_studio" />
-              <Contact title="email" link="someone@example.com" />
-              <Contact title="phone" link="+380999999999" />
-              <Contact title="youtube" link="https://www.youtube.com" />
+              <div className={s.netsConstact}>
+                <Contact
+                  title="whatsapp"
+                  link="https://wa.me/14125790818"
+                  size="small"
+                />
+                <span>+14125790818</span>
+              </div>
+              <div className={s.netsConstact}>
+                <Contact
+                  title="telegram"
+                  link="https://t.me/Artem_Pecheniuk"
+                  size="small"
+                />
+                <span>@Artem_Pecheniuk</span>
+              </div>
+              <div className={s.netsConstact}>
+                <Contact
+                  title="instagram"
+                  link="https://www.instagram.com/artem_pecheniuk_studio"
+                  size="small"
+                />
+                <span>@artem_pecheniuk_studio</span>
+              </div>
+              <div className={s.netsConstact}>
+                <Contact
+                  title="email"
+                  link="artem.pecheniuk.studio@gmail.com"
+                  size="small"
+                />{" "}
+                <span>artem.pecheniuk.studio@gmail.com</span>
+              </div>
+              <div className={s.netsConstact}>
+                <Contact title="phone" link="+14125790818" size="small" />{" "}
+                <span>+14125790818</span>
+              </div>
             </div>
           </div>
         </Board>

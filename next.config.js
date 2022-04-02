@@ -24,6 +24,7 @@ module.exports = (phase) => {
     })(),
     STORAGE_URL:
       "https://storage.googleapis.com/artemdesignstudio-84920.appspot.com/",
+    GOOGLE_ANALYTICS: "UA-224475753-1",
   };
   return {
     env,

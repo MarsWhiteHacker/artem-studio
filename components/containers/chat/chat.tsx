@@ -9,22 +9,22 @@ export const Chat: VFC = () => {
       <div className={s.netsWrapper}>
         <Contact
           title="whatsapp"
-          link="https://www.whatsapp.com"
-          size="small"
+          link="https://wa.me/14125790818"
+          size="big"
         />
         <Contact
           title="telegram"
           link="https://t.me/Artem_Pecheniuk"
-          size="small"
+          size="big"
         />
         <Contact
           title="instagram"
           link="https://www.instagram.com/artem_pecheniuk_studio"
-          size="small"
+          size="big"
         />
-        <Contact title="email" link="someone@example.com" size="small" />
-        <Contact title="phone" link="+380999999999" size="small" />
-        <Contact title="youtube" link="https://www.youtube.com" size="small" />
+        <Contact title="email" link="mailto:artem.pecheniuk.studio@gmail.com" size="big" />
+        <Contact title="phone" link="+14125790818" size="big" />
+        <Contact title="youtube" link="https://www.youtube.com" size="big" />
       </div>
       <div className={s.heartsWrapper}>
         <img alt="chat" src="/hearts.png" className={s.img} />

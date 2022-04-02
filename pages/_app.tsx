@@ -4,15 +4,32 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Provider } from "react-redux";
 import NextNProgress from "nextjs-progressbar";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 import { Chat } from "components/containers/chat";
 import { Carousel } from "components/carousel";
 import store from "store";
 import { LanguageProvider } from "components/containers/languageProvider";
-import "../styles/globals.css";
 import { Alert } from "components/containers/alert";
+import "../styles/globals.css";
+import * as gtag from "../lib/gtag";
+
+const isProduction = process.env.NODE_ENV === "production";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      if (isProduction) gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <>
       <NextNProgress

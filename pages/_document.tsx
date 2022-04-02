@@ -6,6 +6,10 @@ import Document, {
   DocumentProps,
 } from "next/document";
 
+import { GA_TRACKING_ID } from "../lib/gtag";
+
+const isProduction = process.env.NODE_ENV === "production";
+
 class MyDocument extends Document<DocumentProps> {
   render() {
     return (
@@ -28,6 +32,27 @@ class MyDocument extends Document<DocumentProps> {
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap"
             rel="stylesheet"
           />
+          {isProduction && (
+            <>
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+              />
+              <script
+                // eslint-disable-next-line react/no-danger
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '${GA_TRACKING_ID}', {
+                      page_path: window.location.pathname,
+                    });
+                  `,
+                }}
+              />
+            </>
+          )}
         </Head>
         <body>
           <Main />
